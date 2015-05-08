@@ -112,3 +112,7 @@ mean(newdata1$Temp)
 newdata2 <- subset(mydata, Month == 5 $ Ozone ~= NA)
 newdata2$Ozone[!is.na(newdata2$Ozone)]
 max(newdata2$Ozone[!is.na(newdata2$Ozone)])
+
+y <- matrix(c(1,2,3,4,5,6,7,8,9),3,3)
+y[1,]
+y[-2,]
