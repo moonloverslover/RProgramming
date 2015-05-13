@@ -4,6 +4,7 @@
 
 library(datasets) # iris dataset
 library(party) # tree method
+library(caret)
 
 str(iris) # compactly display the internal STRucture of an R object, a diagnostic function and an alternative to "summary"
 summary(iris)
@@ -27,5 +28,8 @@ testPred <- predict(iris_tree, newdata = testData)
 table(testPred, testData$Species)
 
 
-
-
+# using caret
+modFit <- train(Species ~., method="rpart",data=trainData)
+print(modFit$finalModel)
+plot(modFit$finalModel)
+predict(modFit,newdata=testing)
